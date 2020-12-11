@@ -1,0 +1,326 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://Fonts/Layiji_kutlaimuu2_02.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://learn_กอ/2592336.jpg" type="Texture" id=2]
+[ext_resource path="res://assests/กระดาน-png-.png" type="Texture" id=3]
+[ext_resource path="res://assests/finger.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Test_ก.gd" type="Script" id=5]
+[ext_resource path="res://assests/topic_test_ก.png" type="Texture" id=6]
+[ext_resource path="res://assests/owl.png" type="Texture" id=7]
+[ext_resource path="res://assests/homebutton.png" type="Texture" id=8]
+[ext_resource path="res://assests/nextButt.png" type="Texture" id=9]
+[ext_resource path="res://Fonts/CSPraJad-bold.otf" type="DynamicFontData" id=10]
+[ext_resource path="res://assests/finish.png" type="Texture" id=11]
+[ext_resource path="res://assests/complete.png" type="Texture" id=12]
+[ext_resource path="res://Fonts/CooperFiveOpti-Black.otf" type="DynamicFontData" id=13]
+[ext_resource path="res://assests/replay.png" type="Texture" id=14]
+[ext_resource path="res://assests/exit.png" type="Texture" id=15]
+
+[sub_resource type="DynamicFont" id=1]
+size = 29
+font_data = ExtResource( 13 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10.0319, 10 )
+
+[sub_resource type="Animation" id=3]
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationPlayer/Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.5, 0.7, 0.9, 1.1, 1.3, 1.5, 1.7, 1.9, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 475.14, 398.006 ), Vector2( 467.14, 403.659 ), Vector2( 473.649, 330.605 ), Vector2( 477.103, 280.631 ), Vector2( 496.915, 259.056 ), Vector2( 455.751, 237.523 ), Vector2( 538.418, 207.9 ), Vector2( 604.434, 248.578 ), Vector2( 602.468, 362.947 ), Vector2( 600.039, 388.513 ), Vector2( 597.706, 394.768 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimationPlayer/Sprite:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.5, 0.7, 0.9, 1.1, 1.3, 1.5, 1.7, 1.9, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -47.4359, -48.5898, -48.5898, -48.5898, -48.5898, -48.5898, -48.3334, -48.077, -47.7565, -47.4359, -47.4359 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AnimationPlayer/Sprite:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.5, 0.7, 0.9, 1.1, 1.5, 1.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.0306153, 0.0306153 ), Vector2( 0.0306153, 0.0306153 ), Vector2( 0.0306153, 0.0306153 ), Vector2( 0.0306153, 0.0306153 ), Vector2( 0.0306153, 0.0306153 ), Vector2( 0.0306153, 0.0306153 ), Vector2( 0.0306153, 0.0306153 ), Vector2( 0.0306153, 0.0306153 ) ]
+}
+
+[sub_resource type="DynamicFont" id=4]
+size = 500
+outline_color = Color( 0.0392157, 0.0392157, 0.0392157, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 14.6983
+
+[sub_resource type="DynamicFont" id=6]
+size = 270
+font_data = ExtResource( 10 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="PopupScore" type="PopupMenu" parent="."]
+margin_left = 517.62
+margin_top = 332.694
+margin_right = 537.62
+margin_bottom = 352.694
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="PopupScore"]
+position = Vector2( 12.9621, 17.2828 )
+scale = Vector2( 1.25392, 1.25392 )
+texture = ExtResource( 12 )
+
+[node name="Score" type="RichTextLabel" parent="PopupScore"]
+margin_left = -19.0111
+margin_top = -9.50552
+margin_right = 80.9889
+margin_bottom = 60.4945
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+
+[node name="ReplayButton" type="TextureButton" parent="PopupScore"]
+margin_left = -66.5386
+margin_top = 93.3273
+margin_right = 330.461
+margin_bottom = 508.327
+rect_scale = Vector2( 0.177301, 0.177301 )
+texture_normal = ExtResource( 14 )
+
+[node name="CloseButton" type="TextureButton" parent="PopupScore"]
+margin_left = 0.864258
+margin_top = 92.463
+margin_right = 438.864
+margin_bottom = 511.463
+rect_scale = Vector2( 0.174509, 0.174509 )
+texture_normal = ExtResource( 15 )
+
+[node name="bg" type="Sprite" parent="."]
+position = Vector2( 467.539, 195.088 )
+scale = Vector2( 0.547632, 0.547632 )
+texture = ExtResource( 2 )
+
+[node name="topic" type="Sprite" parent="."]
+position = Vector2( 507.957, 67.9245 )
+scale = Vector2( 0.330389, 0.330389 )
+texture = ExtResource( 6 )
+
+[node name="Canvas" type="Node2D" parent="."]
+
+[node name="Sprite2" type="Sprite" parent="Canvas"]
+position = Vector2( 515.048, 294.822 )
+rotation = 3.14159
+scale = Vector2( 0.823936, -0.789246 )
+texture = ExtResource( 3 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Canvas"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Canvas/StaticBody2D"]
+position = Vector2( 516.266, 288.325 )
+scale = Vector2( 36.4237, 17.12 )
+shape = SubResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Draw = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="AnimationPlayer"]
+position = Vector2( 475.14, 398.006 )
+rotation = -0.827913
+scale = Vector2( 0.0306153, 0.0306153 )
+texture = ExtResource( 4 )
+
+[node name="word" type="Label" parent="."]
+margin_left = 417.599
+margin_top = -44.0436
+margin_right = 625.599
+margin_bottom = 575.956
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.788235, 0.788235, 0.788235, 1 )
+text = "ก"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ตกแต่ง" type="Sprite" parent="."]
+position = Vector2( 146.678, 469.565 )
+scale = Vector2( 0.245911, 0.245911 )
+texture = ExtResource( 7 )
+
+[node name="homeButton" type="TextureButton" parent="."]
+margin_left = 809.0
+margin_top = 504.0
+margin_right = 973.0
+margin_bottom = 659.0
+rect_scale = Vector2( 0.562311, 0.562311 )
+texture_normal = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="nextButton" type="TextureButton" parent="."]
+margin_left = 904.0
+margin_top = 512.0
+margin_right = 1253.0
+margin_bottom = 846.0
+rect_scale = Vector2( 0.20983, 0.20983 )
+texture_normal = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="test1" type="Area2D" parent="."]
+position = Vector2( 458.825, 380.393 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="test1"]
+position = Vector2( 1.56857, 3.05176e-05 )
+shape = SubResource( 5 )
+
+[node name="test2" type="Area2D" parent="."]
+position = Vector2( 459.609, 338.825 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="test2"]
+position = Vector2( 0.784271, 3.05176e-05 )
+shape = SubResource( 5 )
+
+[node name="test3" type="Area2D" parent="."]
+position = Vector2( 460.394, 276.864 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="test3"]
+position = Vector2( 0.784271, 3.05176e-05 )
+shape = SubResource( 5 )
+
+[node name="test4" type="Area2D" parent="."]
+position = Vector2( 483.923, 246.275 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="test4"]
+position = Vector2( 0.784271, 3.05176e-05 )
+shape = SubResource( 5 )
+
+[node name="test5" type="Area2D" parent="."]
+position = Vector2( 442.354, 227.452 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="test5"]
+position = Vector2( 0.784271, 3.05176e-05 )
+shape = SubResource( 5 )
+
+[node name="test6" type="Area2D" parent="."]
+position = Vector2( 496.472, 197.648 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="test6"]
+position = Vector2( 0.784271, 3.05176e-05 )
+shape = SubResource( 5 )
+
+[node name="test7" type="Area2D" parent="."]
+position = Vector2( 571.766, 218.824 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="test7"]
+position = Vector2( 0.784271, 3.05176e-05 )
+shape = SubResource( 5 )
+
+[node name="test8" type="Area2D" parent="."]
+position = Vector2( 588.237, 279.217 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="test8"]
+position = Vector2( 0.784271, 3.05176e-05 )
+shape = SubResource( 5 )
+
+[node name="test9" type="Area2D" parent="."]
+position = Vector2( 585.1, 322.354 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="test9"]
+position = Vector2( 0.784271, 3.05176e-05 )
+shape = SubResource( 5 )
+
+[node name="test10" type="Area2D" parent="."]
+position = Vector2( 587.453, 377.256 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="test10"]
+position = Vector2( 0.784271, 3.05176e-05 )
+shape = SubResource( 5 )
+
+[node name="FinishButt" type="TextureButton" parent="."]
+margin_left = 427.28
+margin_top = 499.92
+margin_right = 2065.28
+margin_bottom = 1162.92
+rect_scale = Vector2( 0.124605, 0.1247 )
+texture_normal = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="FinishButt"]
+margin_left = 426.125
+margin_top = 97.3342
+margin_right = 1341.13
+margin_bottom = 501.334
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "เสร็จสิ้น"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="PopupScore/ReplayButton" to="." method="_on_ReplayButton_pressed"]
+[connection signal="pressed" from="PopupScore/CloseButton" to="." method="_on_CloseButton_pressed"]
+[connection signal="pressed" from="homeButton" to="." method="_on_homeButton_pressed"]
+[connection signal="area_entered" from="test1" to="." method="_on_test1_area_entered"]
+[connection signal="input_event" from="test1" to="." method="_on_test1_input_event"]
+[connection signal="mouse_entered" from="test1" to="." method="_on_test1_mouse_entered"]
+[connection signal="mouse_entered" from="test2" to="." method="_on_test2_mouse_entered"]
+[connection signal="mouse_entered" from="test3" to="." method="_on_test3_mouse_entered"]
+[connection signal="mouse_entered" from="test4" to="." method="_on_test4_mouse_entered"]
+[connection signal="mouse_entered" from="test5" to="." method="_on_test5_mouse_entered"]
+[connection signal="mouse_entered" from="test6" to="." method="_on_test6_mouse_entered"]
+[connection signal="mouse_entered" from="test7" to="." method="_on_test7_mouse_entered"]
+[connection signal="mouse_entered" from="test8" to="." method="_on_test8_mouse_entered"]
+[connection signal="mouse_entered" from="test9" to="." method="_on_test9_mouse_entered"]
+[connection signal="mouse_entered" from="test10" to="." method="_on_test10_mouse_entered"]
+[connection signal="pressed" from="FinishButt" to="." method="_on_FinishButt_pressed"]

@@ -1,0 +1,171 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://assests/info-removebg-preview.png" type="Texture" id=1]
+[ext_resource path="res://popupassests/popbg.png" type="Texture" id=2]
+[ext_resource path="res://assests/game on.png" type="Texture" id=3]
+[ext_resource path="res://assests/play.png" type="Texture" id=4]
+[ext_resource path="res://script/MenuScene.gd" type="Script" id=5]
+[ext_resource path="res://assests/sett-removebg-preview.png" type="Texture" id=6]
+[ext_resource path="res://assests/sprites/bg/galaxy.jpg" type="Texture" id=7]
+[ext_resource path="res://popupassests/close-removebg-preview.png" type="Texture" id=9]
+[ext_resource path="res://popupassests/lead.png" type="Texture" id=10]
+[ext_resource path="res://popupassests/poptext.png" type="Texture" id=11]
+[ext_resource path="res://popupassests/level.png" type="Texture" id=12]
+[ext_resource path="res://popupassests/soundoff.png" type="Texture" id=13]
+[ext_resource path="res://script/main.gd" type="Script" id=14]
+
+[node name="MenuScene" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="main" type="ParallaxBackground" parent="."]
+script = ExtResource( 14 )
+
+[node name="bg" type="ParallaxLayer" parent="main"]
+motion_mirroring = Vector2( 1280, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="main/bg"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="logo" type="Sprite" parent="."]
+position = Vector2( 540.749, 195.033 )
+scale = Vector2( 1.34999, 0.923056 )
+texture = ExtResource( 3 )
+
+[node name="PlayButton" type="TextureButton" parent="."]
+margin_left = 299.136
+margin_top = 183.69
+margin_right = 799.136
+margin_bottom = 683.69
+rect_scale = Vector2( 0.941729, 0.88216 )
+texture_normal = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="infoButton" type="TextureButton" parent="."]
+margin_left = -24.9555
+margin_top = 416.332
+margin_right = 475.045
+margin_bottom = 916.332
+rect_scale = Vector2( 0.536434, 0.477424 )
+texture_normal = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SettingButton" type="TextureButton" parent="."]
+margin_left = 795.477
+margin_top = 412.109
+margin_right = 1295.48
+margin_bottom = 912.109
+rect_scale = Vector2( 0.512758, 0.482771 )
+texture_normal = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="settingPopupMenu2" type="PopupMenu" parent="."]
+margin_top = 0.803406
+margin_right = 20.0
+margin_bottom = 20.8034
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="settingPopupMenu2"]
+position = Vector2( 533.327, 301.381 )
+scale = Vector2( 1.11731, 1.34459 )
+texture = ExtResource( 2 )
+
+[node name="logoi" type="Sprite" parent="settingPopupMenu2"]
+position = Vector2( 540.558, 196.128 )
+scale = Vector2( 0.331005, 0.277631 )
+texture = ExtResource( 6 )
+
+[node name="soundoffbut" type="TextureButton" parent="settingPopupMenu2"]
+margin_left = 421.815
+margin_top = 225.771
+margin_right = 693.815
+margin_bottom = 287.771
+rect_scale = Vector2( 0.866914, 0.717339 )
+texture_normal = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="closeButton" type="TextureButton" parent="settingPopupMenu2"]
+margin_left = 440.294
+margin_top = 310.134
+margin_right = 940.294
+margin_bottom = 810.134
+rect_scale = Vector2( 0.387388, 0.366004 )
+texture_normal = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="leadbut" type="TextureButton" parent="settingPopupMenu2"]
+margin_left = 416.0
+margin_top = 263.197
+margin_right = 702.0
+margin_bottom = 344.197
+rect_scale = Vector2( 0.869277, 0.748891 )
+texture_normal = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="levelbut" type="TextureButton" parent="settingPopupMenu2"]
+margin_left = 420.017
+margin_top = 322.41
+margin_right = 710.017
+margin_bottom = 398.41
+rect_scale = Vector2( 0.866609, 0.729622 )
+texture_normal = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="infoPopupMenu" type="PopupMenu" parent="."]
+margin_top = 0.803406
+margin_right = 20.0
+margin_bottom = 20.8034
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="infoPopupMenu"]
+position = Vector2( 533.327, 301.381 )
+scale = Vector2( 1.11731, 1.34459 )
+texture = ExtResource( 2 )
+
+[node name="logoi" type="Sprite" parent="infoPopupMenu"]
+position = Vector2( 534.131, 204.967 )
+scale = Vector2( 0.331005, 0.277631 )
+texture = ExtResource( 1 )
+
+[node name="gamedescript" type="Sprite" parent="infoPopupMenu"]
+position = Vector2( 539.755, 290.936 )
+scale = Vector2( 0.518872, 0.476317 )
+texture = ExtResource( 11 )
+
+[node name="closeButton" type="TextureButton" parent="infoPopupMenu"]
+margin_left = 440.294
+margin_top = 310.134
+margin_right = 940.294
+margin_bottom = 810.134
+rect_scale = Vector2( 0.387388, 0.366004 )
+texture_normal = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="infoButton" to="." method="_on_infoButton_pressed"]
+[connection signal="pressed" from="SettingButton" to="." method="_on_SettingButton_pressed"]
+[connection signal="pressed" from="settingPopupMenu2/closeButton" to="." method="_on_closeButton_pressed"]
+[connection signal="pressed" from="infoPopupMenu/closeButton" to="." method="_on_closeButton_pressed"]

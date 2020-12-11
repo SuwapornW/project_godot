@@ -1,0 +1,157 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://assests/sprites/bg/galaxy.jpg" type="Texture" id=1]
+[ext_resource path="res://assests/backButt .png" type="Texture" id=2]
+[ext_resource path="res://Catassets/category.png" type="Texture" id=3]
+[ext_resource path="res://Catassets/Game_mode.png" type="Texture" id=4]
+[ext_resource path="res://Catassets/Learn_mode.png" type="Texture" id=5]
+[ext_resource path="res://Catassets/customize.png" type="Texture" id=7]
+[ext_resource path="res://script/CatBackground.gd" type="Script" id=8]
+[ext_resource path="res://popupassests/popbg.png" type="Texture" id=9]
+[ext_resource path="res://script/CategoryScene.gd" type="Script" id=10]
+[ext_resource path="res://popupassests/close-removebg-preview.png" type="Texture" id=11]
+[ext_resource path="res://assests/sett-removebg-preview.png" type="Texture" id=12]
+[ext_resource path="res://popupassests/soundoff.png" type="Texture" id=13]
+[ext_resource path="res://popupassests/level.png" type="Texture" id=14]
+[ext_resource path="res://popupassests/lead.png" type="Texture" id=15]
+
+[node name="CategoryScene" type="Node2D"]
+script = ExtResource( 10 )
+
+[node name="CatBackground" type="ParallaxBackground" parent="."]
+script = ExtResource( 8 )
+
+[node name="bg" type="ParallaxLayer" parent="CatBackground"]
+motion_mirroring = Vector2( 1280, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="CatBackground/bg"]
+margin_right = 1308.0
+margin_bottom = 736.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 538.617, 125.572 )
+texture = ExtResource( 3 )
+
+[node name="LearnButton" type="TextureButton" parent="."]
+margin_left = 232.0
+margin_top = 224.0
+margin_right = 537.0
+margin_bottom = 570.0
+rect_scale = Vector2( 0.6, 0.6 )
+texture_normal = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameButton" type="TextureButton" parent="."]
+margin_left = 456.0
+margin_top = 224.0
+margin_right = 743.0
+margin_bottom = 571.0
+rect_scale = Vector2( 0.6, 0.6 )
+texture_normal = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="customizeButton" type="TextureButton" parent="."]
+margin_left = 672.0
+margin_top = 224.0
+margin_right = 821.0
+margin_bottom = 416.0
+rect_scale = Vector2( 1.18, 1.155 )
+texture_normal = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="backButton" type="TextureButton" parent="."]
+margin_left = 54.4935
+margin_top = 494.39
+margin_right = 411.493
+margin_bottom = 831.39
+rect_scale = Vector2( 0.238952, 0.238952 )
+texture_normal = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SettingButton" type="TextureButton" parent="."]
+margin_left = 800.49
+margin_top = 391.441
+margin_right = 1300.49
+margin_bottom = 891.441
+rect_scale = Vector2( 0.558918, 0.558918 )
+texture_normal = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="settingPopupMenu" type="PopupMenu" parent="."]
+margin_right = 20.0
+margin_bottom = 20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bgPop" type="Sprite" parent="settingPopupMenu"]
+position = Vector2( 530.951, 345.389 )
+scale = Vector2( -1.0186, 1.26298 )
+texture = ExtResource( 9 )
+
+[node name="logoset" type="Sprite" parent="settingPopupMenu"]
+position = Vector2( 530.274, 245.158 )
+scale = Vector2( 0.337772, 0.337772 )
+texture = ExtResource( 12 )
+
+[node name="SoundoffButton" type="TextureButton" parent="settingPopupMenu"]
+margin_left = 417.853
+margin_top = 271.957
+margin_right = 689.853
+margin_bottom = 333.957
+rect_scale = Vector2( 0.793426, 0.793426 )
+texture_normal = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="leadoffButton" type="TextureButton" parent="settingPopupMenu"]
+margin_left = 414.467
+margin_top = 310.559
+margin_right = 700.467
+margin_bottom = 391.559
+rect_scale = Vector2( 0.793426, 0.793426 )
+texture_normal = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="levelButton" type="TextureButton" parent="settingPopupMenu"]
+margin_left = 413.112
+margin_top = 364.06
+margin_right = 703.112
+margin_bottom = 445.06
+rect_scale = Vector2( 0.793426, 0.793426 )
+texture_normal = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ClosePop" type="TextureButton" parent="settingPopupMenu"]
+margin_left = 438.17
+margin_top = 362.351
+margin_right = 938.17
+margin_bottom = 862.351
+rect_scale = Vector2( 0.350683, 0.345135 )
+texture_normal = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="LearnButton" to="." method="_on_LearnButton_pressed"]
+[connection signal="pressed" from="backButton" to="." method="_on_backButton_pressed"]
+[connection signal="pressed" from="SettingButton" to="." method="_on_SettingButton_pressed"]
+[connection signal="pressed" from="settingPopupMenu/ClosePop" to="." method="_on_ClosePop_pressed"]

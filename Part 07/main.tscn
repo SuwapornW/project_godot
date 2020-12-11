@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://player.tscn" type="PackedScene" id=2]
+
+[node name="main" type="Node"]
+
+[node name="player" parent="." instance=ExtResource( 2 )]
+
+[node name="gem_container" type="Node" parent="."]
+
+[node name="HUD" type="Control" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="score_label" type="Label" parent="HUD"]
+text = "0"
